@@ -1,28 +1,48 @@
 plugins {
-    id 'java'
-    id 'org.springframework.boot' version '3.4.3'
-    id 'io.spring.dependency-management' version '1.1.7'
+    id 'java' // Java plugin
+    id 'maven-publish' // Optional: for publishing the library locally or remotely
 }
 
-group = 'com.example'
-version = '0.0.1-SNAPSHOT'
-
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
-}
+group = 'com.example' // Group name for the library
+version = '1.0.0' // Library version
+description = 'A common library with shared utilities' // Description of the common library
 
 repositories {
-    mavenCentral()
+    mavenCentral() // Central repository to fetch dependencies
+    jcenter() // Optional, depending on your dependencies
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    implementation 'org.projectlombok:lombok:1.18.24' // Lombok to reduce boilerplate code
+    implementation 'org.springframework.boot:spring-boot-starter' // Optional, for Spring Boot utilities
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test' // Spring Boot testing starter
 }
 
-tasks.named('test') {
-    useJUnitPlatform()
+sourceCompatibility = '1.8' // Java version compatibility
+targetCompatibility = '1.8' // Java version compatibility
+
+tasks.test {
+    useJUnitPlatform() // Enable JUnit platform for testing
 }
+
+// Optional: Publishing configuration for sharing the library with other projects
+//publishing {
+//    publications {
+//        mavenJava(MavenPublication) {
+//            from components.java // Publish the Java components (the JAR)
+//
+//            pom {
+//                name = 'Common Library'
+//                description = 'A library containing common functionality used by other services'
+//                url = 'https://github.com/your-repo/common-library' // Replace with your repository URL
+//            }
+//        }
+//    }
+//
+//    repositories {
+//        maven {
+//            url = uri("file://${buildDir}/repo") // Local Maven repository (optional)
+//        }
+//    }
+//}

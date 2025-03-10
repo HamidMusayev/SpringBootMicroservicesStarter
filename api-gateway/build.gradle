@@ -15,6 +15,12 @@ repositories {
 dependencies {
     // Spring Boot Starter WebFlux (Required for Gateway)
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // Add Lombok dependency
+    implementation 'org.projectlombok:lombok:1.18.24'
+    // Enable annotation processing
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
     // Spring Cloud Gateway
     implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
