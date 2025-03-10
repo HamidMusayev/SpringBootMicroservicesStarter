@@ -1,12 +1,23 @@
 plugins {
-    id 'org.springframework.boot' version '3.2.2'
-    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'org.springframework.boot' version '3.4.3'
+    id 'io.spring.dependency-management' version '1.1.7'
     id 'java'
 }
 
 group = 'com.example'
-version = '1.0.0'
-sourceCompatibility = '17'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(23)
+    }
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
 
 repositories {
     mavenCentral()
@@ -20,9 +31,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 
     // Add Lombok dependency
-    implementation 'org.projectlombok:lombok:1.18.24'
+    implementation 'org.projectlombok:lombok'
     // Enable annotation processing
-    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok'
 
     // PostgreSQL Driver
     implementation 'org.postgresql:postgresql'
@@ -35,10 +46,6 @@ dependencies {
 
     // Spring Boot Actuator for monitoring
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-
-    // Testing dependencies
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.cloud:spring-cloud-starter-config'
 }
 
 dependencyManagement {
