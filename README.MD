@@ -6,13 +6,18 @@
 - [x] Gradle project structure
 - [x] Docker support
 - [x] Global exception handling
-- [ ] JWT authentication
-- [ ] Eureka service discovery
+- [x] Gateway service
+- [x] Eureka service discovery
+
+### auth-service
+
+- [x] User authentication
+- [x] JWT authentication
+- [ ] JWT VALIDATION
 
 #### user-service
 - [x] User CRUD
 - [x] Database integration with PostgreSQL
-- [ ] User authentication
 
 #### product-service
 - [x] Product CRUD

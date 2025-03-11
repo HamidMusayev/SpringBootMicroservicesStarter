@@ -3,6 +3,7 @@ package com.example.userservice.controller;
 import com.example.userservice.model.User;
 import com.example.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,5 +39,11 @@ public class UserController {
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
+    }
+
+    @PostMapping("/validate")
+    public ResponseEntity<Boolean> validateUser(@RequestBody User user) {
+        boolean isValid = userService.validateUser(user.getUsername(), user.getPassword());
+        return ResponseEntity.ok(isValid);
     }
 }
