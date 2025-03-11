@@ -2,9 +2,24 @@ spring:
   application:
     name: api-gateway
   cloud:
-    config:
-      uri: http://localhost:8888  # Config Server URL
-  eureka:
-    client:
-      serviceUrl:
-        defaultZone: http://localhost:8761/eureka  # Eureka server URL
+    gateway:
+      routes:
+        - id: product-service
+          uri: http://localhost:8081
+          predicates:
+            - Path=/product/**
+
+        - id: user-service
+          uri: http://localhost:8082
+          predicates:
+            - Path=/user/**
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    urls:
+      - name: Product Service
+        url: http://localhost:8081/v3/api-docs
+      - name: User Service
+        url: http://localhost:8082/v3/api-docs

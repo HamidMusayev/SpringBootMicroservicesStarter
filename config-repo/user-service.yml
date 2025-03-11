@@ -1,7 +1,0 @@
-spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/users
-    username: dis
-    password: dis
-  server:
-    port: 8082
