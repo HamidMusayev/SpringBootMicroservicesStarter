@@ -5,6 +5,7 @@
 - [x] Using Lombok for reducing boilerplate code
 - [x] Gradle project structure
 - [x] Docker support
+- [x] Global exception handling
 - [ ] JWT authentication
 - [ ] Eureka service discovery
 

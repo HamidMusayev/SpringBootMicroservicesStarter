@@ -11,13 +11,10 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/config-server" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="externalProjectPath" value="$PROJECT_DIR$/discovery-server" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/common-library" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/discovery-server" />
+            <option value="$PROJECT_DIR$/common-library" />
           </set>
         </option>
       </GradleProjectSettings>
