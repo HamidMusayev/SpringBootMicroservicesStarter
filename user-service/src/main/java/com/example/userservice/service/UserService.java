@@ -12,7 +12,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public List<User> getAllUsers() {
         return userRepository.findAll();

@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class ProductController {
 
-    private ProductService productService;
+    private final ProductService productService;
 
     @GetMapping
     public List<Product> getAllProducts() {

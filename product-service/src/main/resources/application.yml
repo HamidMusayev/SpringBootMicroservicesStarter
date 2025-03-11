@@ -5,6 +5,10 @@ spring:
     url: jdbc:postgresql://localhost:5432/products
     username: dis
     password: dis
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
 server:
   port: 8081
 
